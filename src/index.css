@@ -76,3 +76,54 @@ h1{
   bottom: 0;
   left: 0;
 }
+
+
+/* QUIZ */
+
+.quiz-screen{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+
+  padding: 50px;
+  gap: 40px;
+}
+
+.quiz-element{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quiz-question{
+  color: #293264;
+  font-family: "Karla", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.quiz-answers{
+  display: flex;
+  gap: 15px;
+}
+
+.quiz-answers button{
+  color: #293264;
+  background-color: #fff;
+  border: 1px solid #4D5B9E;
+  border-radius: 13px;
+  padding: 5px 15px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bottom-line{
+  height: 1px;
+  width: 100%;
+  background-color: #DBDEF0;
+}
