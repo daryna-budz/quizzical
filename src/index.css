@@ -12,7 +12,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .main-screen{
@@ -63,7 +63,7 @@ h1{
 }
 
 .blob {
-  position: absolute;
+  position: fixed;
   z-index: 0;
 }
 
@@ -88,6 +88,9 @@ h1{
 
   padding: 50px;
   gap: 40px;
+
+  position: relative;
+  z-index: 1;
 }
 
 .quiz-element{
@@ -125,6 +128,14 @@ h1{
 .quiz-answers button.selected{
   background-color: #D6DBF5;
   color: #293264;
+}
+
+.quiz-answers button.correct{
+  background-color: green;
+}
+
+.quiz-answers button.wrong{
+  background-color: red;
 }
 
 .bottom-line{

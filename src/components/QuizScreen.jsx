@@ -8,6 +8,7 @@ export function QuizScreen(){
 
     const [questions, setQuestions] = useState([])
     const [selectedAnswers, setSelectedAnswers] = useState({})
+    
 
 
     useEffect(() => {
@@ -18,6 +19,7 @@ export function QuizScreen(){
                     q.correct_answer,
                     ...q.incorrect_answers
                 ];
+                console.log(q.correct_answer) 
                 return {
                     ...q,
                     answers: shuffleArray(answers), 
@@ -39,6 +41,8 @@ export function QuizScreen(){
         })
         )
     }
+
+
 
 
 
