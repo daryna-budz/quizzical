@@ -39,7 +39,7 @@ h1{
 }
 
 
-.start-btn{
+.start-btn, .check-btn{
   background-color: #4D5B9E;
   color: #F5F7FB;
   border: none;
@@ -84,7 +84,7 @@ h1{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: flex-start;
 
   padding: 50px;
   gap: 40px;
@@ -122,8 +122,17 @@ h1{
   transition: 0.3s;
 }
 
+.quiz-answers button.selected{
+  background-color: #D6DBF5;
+  color: #293264;
+}
+
 .bottom-line{
   height: 1px;
-  width: 100%;
+  width: 900px;
   background-color: #DBDEF0;
+}
+
+.check-btn{
+  align-self: center;
 }
