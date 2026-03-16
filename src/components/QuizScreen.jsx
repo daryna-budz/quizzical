@@ -8,6 +8,8 @@ export function QuizScreen(){
 
     const [questions, setQuestions] = useState([])
     const [selectedAnswers, setSelectedAnswers] = useState({})
+    const [correctAnswers, setCorrectAnswers] = useState(0)
+    const [showResults, setShowResults] = useState(false)
     
 
 
@@ -42,6 +44,17 @@ export function QuizScreen(){
         )
     }
 
+     function checkResults(){
+        let count = 0;
+        questions.forEach((elem) =>{
+            if(elem.correct_answer === selectedAnswers[elem.question]){
+                count+=1
+            }
+        })
+        setCorrectAnswers(count)
+        setShowResults(true)
+     }
+
 
 
 
@@ -57,7 +70,22 @@ export function QuizScreen(){
                         <button 
                         key={answer} 
                         onClick={()=>chooseAnswer(elem.question,answer)}
-                        className={selectedAnswers[elem.question] === answer ? "selected" : ""}
+                        disabled={showResults}
+                        className={`
+                            ${selectedAnswers[elem.question] === answer ? "selected" : ""}
+                            ${
+                                showResults && answer === elem.correct_answer
+                                    ? "correct"
+                                    : ""
+                            }
+                            ${
+                                showResults &&
+                                selectedAnswers[elem.question] === answer &&
+                                answer !== elem.correct_answer
+                                    ? "wrong"
+                                    : ""
+                            }
+                        `}
                         >
                             {decode(answer)}
                         </button>
@@ -68,13 +96,16 @@ export function QuizScreen(){
         )
     })
 
+    console.log(questions)
+    console.log(selectedAnswers)
+
 
 
     return (
         <section className="quiz-screen">
              
              {quizObjects}
-             {Object.keys(selectedAnswers).length === questions.length && <button className="check-btn">Check results</button>}
+             {Object.keys(selectedAnswers).length === questions.length && <button className="check-btn" onClick={checkResults}>Check results</button>}
 
              <img src="../src/assets/blob-ylw.svg" className="blob blob-yellow" />
              <img src="../src/assets/blob-blue.svg" className="blob blob-blue" />

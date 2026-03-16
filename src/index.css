@@ -58,6 +58,10 @@ h1{
   transition: 0.3s;
 }
 
+.check-btn{
+  margin-top: 10px;
+}
+
 .start-btn:hover{
   background-color: #2c3359;
 }
@@ -131,11 +135,13 @@ h1{
 }
 
 .quiz-answers button.correct{
-  background-color: green;
+  background-color: #94D7A2;
+  border: none;
 }
 
 .quiz-answers button.wrong{
-  background-color: red;
+  background-color: #F8BCBC;
+  border: none
 }
 
 .bottom-line{
