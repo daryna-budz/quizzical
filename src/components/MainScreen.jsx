@@ -1,5 +1,7 @@
 
 import { Link } from "react-router-dom";
+import blobYellow from "../assets/blob-ylw.svg"
+import blobBlue from "../assets/blob-blue.svg"
 
 
 export function MainScreen(){
@@ -13,8 +15,8 @@ export function MainScreen(){
                  <button className="start-btn">Start quiz</button>
              </Link>
 
-             <img src="../src/assets/blob-ylw.svg" className="blob blob-yellow" />
-             <img src="../src/assets/blob-blue.svg" className="blob blob-blue" />
+             <img src={blobYellow} className="blob blob-yellow" />
+             <img src={blobBlue} className="blob blob-blue" />
         </section>
     )
 }
