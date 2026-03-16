@@ -39,7 +39,7 @@ h1{
 }
 
 
-.start-btn, .check-btn{
+.start-btn, .check-btn, .again-btn{
   background-color: #4D5B9E;
   color: #F5F7FB;
   border: none;
@@ -152,4 +152,16 @@ h1{
 
 .check-btn{
   align-self: center;
+}
+
+.play-again {
+  align-self: center;
+  text-align: center;
+}
+
+.play-again p{
+  color: #293264;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
 }

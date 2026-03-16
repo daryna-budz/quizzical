@@ -96,16 +96,19 @@ export function QuizScreen(){
         )
     })
 
-    console.log(questions)
-    console.log(selectedAnswers)
-
 
 
     return (
         <section className="quiz-screen">
              
              {quizObjects}
-             {Object.keys(selectedAnswers).length === questions.length && <button className="check-btn" onClick={checkResults}>Check results</button>}
+             {!showResults && Object.keys(selectedAnswers).length === questions.length && <button className="check-btn" onClick={checkResults}>Check results</button>}
+             {showResults && 
+                    <div className="play-again">
+                        <p>You scored {correctAnswers}/5 correct answers 🎉</p>
+                        <button className="again-btn">Play again</button>
+                    </div>
+                  }
 
              <img src="../src/assets/blob-ylw.svg" className="blob blob-yellow" />
              <img src="../src/assets/blob-blue.svg" className="blob blob-blue" />
